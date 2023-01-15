@@ -7,4 +7,9 @@
 
 ## Installation and execution
 - Install dependencies in package.json file in respective folder.
-- Run ""mmand fr
+- Run "npm start" command in CLI in both frontend and backend folder to use the application.
+- Use the link generated in backend CLI to navigate and use the website locally.
+
+## Note
+- Assumed that port 27017 port is open on your network as my application uses mongo atlas as cloud database for this project.
+- ps: port 27017 isn't open on IIITH network , neither are the gaming ports for "security concerns" :<.
