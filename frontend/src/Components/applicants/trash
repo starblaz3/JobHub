@@ -1,0 +1,38 @@
+<CardGroup>
+        {jobList.map((x,i)=>(
+            <Card>
+                <CardBody>
+                    <CardTitle>
+                        Title: {x.title}
+                    </CardTitle>
+                    <CardSubtitle>
+                        Date:  {x.datePost}
+                    </CardSubtitle>
+                    {/* <br/>
+                    <CardSubtitle>
+                        Number of applicants: {x.applicationsAllowed}
+                    </CardSubtitle>
+                    <br/>
+                    <CardSubtitle>
+                        Max Number of pos: {x.positionsAvail}
+                    </CardSubtitle> */}
+                    <Form onSubmit={handleSubmit(onSub)}>
+                        <FormGroup>
+                            <Label>number of applicants</Label>
+                            <Input innerRef={register} type="number" name={`a-${i}`} defaultValue={x.applicationsAllowed}></Input>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>max number of positions</Label>
+                            <Input innerRef={register} type="number" name={`p-${i}`} defaultValue={x.positionsAvail}></Input>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>deadline</Label>
+                            <Input innerRef={register} type="date" name={`d-${i}`} defaultValue={Date.parse(x.deadline)}></Input>
+                        </FormGroup>
+                        <Input type="submit"/>
+                    </Form>
+                    <Button onClick={()=>deleteJob(i)}>delete</Button>
+                </CardBody>
+            </Card>
+        ))}
+        </CardGroup>
